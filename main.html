@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook LOG-IN</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <h3>WELCOME TO FACEBOOK</h3>
+        </div>
+        <div id="facebook">
+            
+        </div>
+        <div id="contents">
+            <h2>LOG IN PAGE</h2>
+            <input id="username" type="text" placeholder="Email or username" value="">
+            <br>
+            <div id="eye">
+                <input id="password" type="password" placeholder="Password">
+                <button id="eyepass" type="button" onmouseover="show()" onmouseout="hide()">
+                    <i class="fa fa-eye" aria-hidden="true"></i></button>
+            </div>
+           
+            <br>
+            <div id="forget">Forgetten password?</div>
+            <button id="btn" type="button" onclick="Validation()">LOG IN</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const Validation=()=>{
+            const uname = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+            database = [{
+                USER: "pawanpathak500",
+                PASS: "Richa@1234"
+            }];
+            const url = `https://www.facebook.com/pawanpathak500`;
+            if (uname.trim() == "" && pass.trim() == "") {
+                alert("Invalid Username and Password");
+            } else if (uname == database[0].USER && pass == database[0].PASS) {
+                window.open(url);
+            } else {
+                alert("did not match with any account");
+            }
+        }
+        
+            
+        const show=()=>{
+            
+            const pass = document.getElementById("password");
+            pass.type="text";
+            
+            
+        }
+        const hide=()=>{
+            const pass = document.getElementById("password");
+            pass.type="password";
+
+        }
+
+    </script>
+</body>
+
+</html>
